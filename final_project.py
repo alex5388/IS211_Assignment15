@@ -3,14 +3,13 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-#scrape website
-
+# Scrape website
 book_isbn = '9781449372620'
 r = requests.get("https://www.googleapis.com/books/v1/volumes?q=isbn:{}".format(book_isbn))
 soup = BeautifulSoup(r.content, 'html.parser')
 
-'''Parsed JSON Data'''
 
+# Parse JSON data
 data = json.loads(soup.text)
 try:
     title = data['items'][0]['volumeInfo']['title']
