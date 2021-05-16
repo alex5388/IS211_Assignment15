@@ -8,7 +8,6 @@ import os
 app = Flask(__name__)
 app.secret_key = ('pass')
 
-
 #login form
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -30,8 +29,6 @@ def login():
         return render_template('login.html', error=error)
 
 
-
-
 # Main Display
 @app.route('/maindisplay', methods=['GET'])
 def books():
@@ -46,8 +43,6 @@ def books():
     books_info = c.fetchall()
 
     return render_template('maindisplay.html', books_info=books_info)
-
-
 
 
 #function to find book information
@@ -99,8 +94,6 @@ def search():
     return render_template('maindisplay.html', title=title, author=author, page_count=page_count, average_rating=average_rating, books_info=books_info)
 
 
-
-
 # Function to add books to collection
 @app.route('/book_add', methods=['GET','POST'])
 def book_add():
@@ -144,6 +137,7 @@ def book_add():
     conn.commit()
     return redirect('/maindisplay')
 
+
 #delete record
 @app.route('/delete_book', methods=['POST'])
 def delete_book():
@@ -159,9 +153,6 @@ def delete_book():
     conn.commit()
 
     return redirect('/maindisplay')
-
-
-
 
 if __name__=="__main__":
     app.run(debug=True)
