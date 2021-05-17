@@ -28,7 +28,7 @@
     <h1>Find Book</h1>
     <form action="/search" method="post">
         <label for="book_isbn">ISBN of Book:</label><br>
-        <input type="text" id="book_isbn" name="book_isbn" pattern="[0-9]{10-13}" title="only NUMBERS accepted" required><br>
+        <input type="text" id="book_isbn" name="book_isbn" pattern="[0-9]{10,13}" title="only NUMBERS accepted"><br>
         <input type="submit" value="Find Book">
     </form>
     <br>
@@ -39,7 +39,7 @@
     <div class="container" align="center">
         <table width="400px" border="1">
         <tr>
-            <td width="200px" align="center"><b>ID</b></td>
+            <td width="200px" align="center"><b>Book ID</b></td>
             <td width="200px" align="center"><b>Book Title</b></td>
             <td width="200px" align="center"><b>Author</b></td>
             <td width="200px" align="center"><b>Pages</b></td>
@@ -60,13 +60,13 @@
     <h1>Add Book To Your Collection?</h1>
         <form action="/book_add" method="post">
             <label for="isbn">ISBN of Book:</label><br>
-            <input type="text" id="isbn" name="isbn" pattern="[0-9]{10-13}" title="only NUMBERS accepted" required><br>
+            <input type="text" id="isbn" name="isbn" pattern="[0-9]{10,13}" title="only NUMBERS accepted" required><br>
             <input type="submit" value="Add Book">
         </form>
 
         <form action="/delete_book" method="post"><br>
             <label for="delete">Delete a Record:</label><br>
-            <input type="text" id="delete" name="row" pattern="[0-9]{1-6}" title="only NUMBERS accepted" required><br>
+            <input type="text" id="delete" name="row" pattern="[0-9]{1,6}" title="Enter 'Book ID' to delete" required><br>
             <input type="submit" value="Delete Book">
         </form>
 </div>
