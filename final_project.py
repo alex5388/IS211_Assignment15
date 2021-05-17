@@ -53,9 +53,9 @@ def search():
     book_isbn = request.form['book_isbn']
 
     # Scrape website
-    #Flask book = '9781449372620'
-    #Harry Potter ='9780545139700'
-    #Awaken the Giant = '1471167518'
+    #Flask isbn = '9781449372620'
+    #Harry Potter isbn ='9780545139700'
+    #Awaken the Giant isbn = '1471167518'
 
     r = requests.get("https://www.googleapis.com/books/v1/volumes?q=isbn:{}".format(book_isbn))
     soup = BeautifulSoup(r.content, 'html.parser')
