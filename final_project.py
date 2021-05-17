@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, request, session, render_template, redirect, url_for
 import requests
 import json
 from bs4 import BeautifulSoup
