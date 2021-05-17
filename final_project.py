@@ -8,6 +8,10 @@ import os
 app = Flask(__name__)
 app.secret_key = ('pass')
 
+@app.route('/', methods=['GET','POST'])
+def index():
+    return redirect(url_for('login'))
+
 #login form
 @app.route('/login', methods=['GET', 'POST'])
 def login():
